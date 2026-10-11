@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://chh3ggy6u6n7g"]
+
+[ext_resource type="Texture2D" uid="uid://de6pnp6rhl5sm" path="res://assets/placeholders/spr_tower_gun.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://cutiv0wx635sw" path="res://scripts/player_movement.gd" id="1_g2els"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dfsep"]
+radius = 39.051247
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_omb5t"]
+radius = 78.0
+
+[node name="Player" type="Node2D" unique_id=441779511]
+
+[node name="Player Body" type="CharacterBody2D" parent="." unique_id=1228754822]
+script = ExtResource("1_g2els")
+
+[node name="Sprite PLACEHOLDER" type="Sprite2D" parent="Player Body" unique_id=1169298608]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("1_3vyb7")
+
+[node name="Body Shape" type="CollisionShape2D" parent="Player Body" unique_id=413993971]
+shape = SubResource("CircleShape2D_dfsep")
+
+[node name="Pickup Area" type="Area2D" parent="Player Body" unique_id=984932048]
+
+[node name="Pickup Area Shape" type="CollisionShape2D" parent="Player Body/Pickup Area" unique_id=1862124291]
+shape = SubResource("CircleShape2D_omb5t")
